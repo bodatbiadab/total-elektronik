@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data.data.forEach((produk) => {
           dataContainer.innerHTML += ` <tr class="table-active">
           <th scope="row">${i}</th>
-          <td class="table-active">${produk.namak}</td>
+          <td class="table-active">${produk.nama}</td>
           <td>${produk.kategori}</td>
           <td>${produk.harga}</td>
           <td>${produk.deskripsi}</td>
