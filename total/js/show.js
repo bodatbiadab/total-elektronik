@@ -1,4 +1,4 @@
-const apiUrl = "http://localhost:6969/product";
+const apiUrl = "https://totalelek.totalelek.kencang.id/v1/";
 let capek = "";
 let on = false;
 
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // URL API yang akan diambil data
 
   // Gunakan fetch untuk melakukan permintaan ke APi
-  fetch(apiUrl)
+  fetch(apiUrl + "getall")
     .then((response) => {
       // Periksa apakah respons dari API berhasil (status code 200)
       //   console.log(response.json().then((d) => console.log(d)));
@@ -37,64 +37,64 @@ document.addEventListener("DOMContentLoaded", function () {
         capek = data;
         console.log(data);
         // Iterasi melalui setiap produk dan tambahkan ke elemen HTML
-        data.forEach((produk) => {
-          if (produk.kategori_produk === "ac") {
+        data.data.forEach((produk) => {
+          if (produk.kategori === "ac") {
             dataContainer.innerHTML += `
             <div class="menu-card">
             <img src="${
-              produk.link_photo
+              produk.nama_photo
             }" alt="Air Conditioner" class="menu-card-img">
-            <h3 class="menu-card-title">${produk.nama_produk}</h3>
+            <h3 class="menu-card-title">${produk.nama}</h3>
             <p class="menu-card-price">"${formatRupiah(produk.harga)}"</p>
           </div>
         `;
-          } else if (produk.kategori_produk === "laptop-computer") {
+          } else if (produk.kategori === "laptop-computer") {
             laptopContainer.innerHTML += `
             <div class="menu-card">
             <img src="${
-              produk.link_photo
+              produk.nama_photo
             }" alt="Air Conditioner" class="menu-card-img">
-            <h3 class="menu-card-title">"${produk.nama_produk}"</h3>
+            <h3 class="menu-card-title">"${produk.nama}"</h3>
             <p class="menu-card-price">"${formatRupiah(produk.harga)}"</p>
           </div>
         `;
-          } else if (produk.kategori_produk === "home appliance") {
+          } else if (produk.kategori === "home appliance") {
             HAContainer.innerHTML += `
             <div class="menu-card">
             <img src="${
-              produk.link_photo
+              produk.nama_photo
             }" alt="Air Conditioner" class="menu-card-img">
-            <h3 class="menu-card-title">"${produk.nama_produk}"</h3>
+            <h3 class="menu-card-title">"${produk.nama}"</h3>
             <p class="menu-card-price">"${formatRupiah(produk.harga)}"</p>
           </div>
         `;
-          } else if (produk.kategori_produk === "cabel") {
+          } else if (produk.kategori === "cabel") {
             CBContainer.innerHTML += `
             <div class="menu-card">
             <img src="${
-              produk.link_photo
+              produk.nama_photo
             }" alt="Air Conditioner" class="menu-card-img">
-            <h3 class="menu-card-title">"${produk.nama_produk}"</h3>
+            <h3 class="menu-card-title">"${produk.nama}"</h3>
             <p class="menu-card-price">"${formatRupiah(produk.harga)}"</p>
           </div>
         `;
-          } else if (produk.kategori_produk === "tv") {
+          } else if (produk.kategori === "tv") {
             tvContainer.innerHTML += `
             <div class="menu-card">
             <img src="${
-              produk.link_photo
+              produk.nama_photo
             }" alt="Air Conditioner" class="menu-card-img">
-            <h3 class="menu-card-title">"${produk.nama_produk}"</h3>
+            <h3 class="menu-card-title">"${produk.nama}"</h3>
             <p class="menu-card-price">"${formatRupiah(produk.harga)}"</p>
           </div>
         `;
-          } else if (produk.kategori_produk === "etc") {
+          } else if (produk.kategori === "etc") {
             etcContainer.innerHTML += `
             <div class="menu-card">
             <img src="${
-              produk.link_photo
+              produk.nama_photo
             }" alt="Air Conditioner" class="menu-card-img">
-            <h3 class="menu-card-title">"${produk.nama_produk}"</h3>
+            <h3 class="menu-card-title">"${produk.nama}"</h3>
             <p class="menu-card-price">"${formatRupiah(produk.harga)}"</p>
           </div>
         `;
