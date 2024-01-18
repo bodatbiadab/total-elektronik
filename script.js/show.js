@@ -1,4 +1,4 @@
-const apiUrl = "http://totalelek.totalelek.kencang.id/v1/getall";
+const apiUrl = "https://totalelek.totalelek.kencang.id/v1/getall";
 let capek = "";
 
 document.addEventListener("DOMContentLoaded", function () {
