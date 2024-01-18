@@ -11,6 +11,8 @@ const etcContainer = document.getElementById("etc");
 const mesincuciContainer = document.getElementById("mesincuci");
 const kipasContainer = document.getElementById("kipas");
 const printerContainer = document.getElementById("printer");
+const cctvContainer = document.getElementById("cctv");
+
 dataContainer.innerHTML = "";
 laptopContainer.innerHTML = "";
 HAContainer.innerHTML = "";
@@ -20,6 +22,7 @@ etcContainer.innerHTML = "";
 mesincuciContainer.innerHTML = "";
 kipasContainer.innerHTML = "";
 printerContainer.innerHTML = "";
+cctvContainer.innerHTML = "";
 
 // Menambahkan event listener untuk mendengarkan perubahan input
 
@@ -137,6 +140,16 @@ fetch(apiUrl)
         `;
         } else if (produk.kategori === "printer") {
           printerContainer.innerHTML += `
+            <div class="menu-card">
+            <img src="${
+              produk.nama_photo
+            }" alt="Air Conditioner" class="menu-card-img">
+            <h3 class="menu-card-title">"${produk.nama}"</h3>
+            <p class="menu-card-price">"${formatRupiah(produk.harga)}"</p>
+          </div>
+        `;
+        } else if (produk.kategori === "cctv") {
+          cctvContainer.innerHTML += `
             <div class="menu-card">
             <img src="${
               produk.nama_photo
